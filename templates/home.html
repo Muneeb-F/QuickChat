@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="background">
+    <div class="shape"></div>
+    <!-- <div class="shape"></div> -->
+</div>
+
+
+<form method="post" class="buttons">
+    
+    
+    
+    
+    <form>
+        
+        
+        <h1>QuickChat</h1>
+        <h3>Enter a Chat Room</h3>
+    
+
+        <label for="username">Name</label>
+        <input type="text" placeholder="Pick a name" name="name" value="{{name}}"/>
+        
+
+        <label for="password">Room Code</label>
+            <input type="text" placeholder="Enter a room code" name="code" value="{{code}}"/>
+        
+        <div class="buttons">
+            <button type="submit" name="join" class="join-btn">Join a Room</button>
+            <h4>OR</h4>
+            <button type="submit" name="create" class="create-btn">Create a Room</button>
+        </div>
+
+        {% if error %}
+    <!-- <ul> -->
+        <h5 class="list">{{error}}</h5>
+    <!-- </ul> -->
+    {% endif %} 
+
+    </form>
+
+    
+
+
+
+</form> 
+
+
+    <!-- {% if error %}
+    <ul>
+        <li class="list">{{error}}</li>
+    </ul>
+    {% endif %} -->
+    
+
+
+{% endblock %}
+
+
+
+
+    <!-- <div>
+        <label class="name">Name: </label>
+        <input class="name-input" type="text" placeholder="Pick a name" name="name" value="{{name}}"/>
+    </div>
+    <div class="join">
+        <input class="join-input" type="text" placeholder="Room Code" name="code" value="{{code}}"/>
+        <button type="submit" name="join" class="join-btn">Join a Room</button>
+    </div>
+    <div class="create">
+        <button type="submit" name="create" class="create-btn">Create a Room</button>
+    </div> -->
+    <!-- {% if error %}
+    <ul>
+        <li class="list">{{error}}</li>
+    </ul>
+    {% endif %}
