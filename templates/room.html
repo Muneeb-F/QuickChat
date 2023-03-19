@@ -1,15 +1,35 @@
+
+
+
+
+
 {% extends 'base.html' %}
 {% block content %}
 <div class = "message-box">
     <h2>Chat Room: {{code}}</h2>
     <div class="messages" id="messages"></div>
-    <div class="inputs">
-        <input type="text" rows="3" placeholder="Message" name="message" id="message"/>
-        <button type = "button" name="send" id="send-btn" onClick="sendMessage()">
-            Send
-        </button>
+    <div class="msg-inputs">
+        <input class="msg-input" type="text" rows="3" placeholder="Message" name="message" id="message" onkeydown="handleKeyDown(event)" />
+        <button class="send-btn" type="button" name="send" id="send-btn" onclick="sendMessage()">Send</button>
     </div>
 </div>
+
+<script>
+    function handleKeyDown(event) {
+      if (event.key === "Enter") {
+        event.preventDefault(); // prevent default behavior of Enter key
+        sendMessage();
+      }
+    }
+</script>
+
+
+
+<script>
+        </script>
+
+
+
 <script type="text/javascript">
     var socketio = io();
 
@@ -40,7 +60,37 @@
         socketio.emit("message", {data: message.value})
         message.value = "";        
     }
+
+    function getMessages() {
+        // var div = $("messages");
+        // div.scrollTop(div.prop('scrollHeight'));
+        // Prior to getting your messages.
+    shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
+    /*
+    * Get your messages, we'll just simulate it by appending a new one syncronously.
+    */
+    // appendMessage();
+    // After getting your messages.
+    if (!shouldScroll) {
+        scrollToBottom();
+    }
+    }
+
+
+    function scrollToBottom() {
+    messages.scrollTop = messages.scrollHeight;
+    }
+
+    scrollToBottom();
+
+    setInterval(getMessages, 100);
+
 </script>
+
+<script>
+    
+</script>
+
 
 {% for msg in messages%}
 <script type="text/javascript">
