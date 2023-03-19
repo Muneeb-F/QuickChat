@@ -23,13 +23,6 @@
     }
 </script>
 
-
-
-<script>
-        </script>
-
-
-
 <script type="text/javascript">
     var socketio = io();
 
@@ -65,12 +58,7 @@
         // var div = $("messages");
         // div.scrollTop(div.prop('scrollHeight'));
         // Prior to getting your messages.
-    shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
-    /*
-    * Get your messages, we'll just simulate it by appending a new one syncronously.
-    */
-    // appendMessage();
-    // After getting your messages.
+    shouldScroll = messages.scrollTop + messages.clientHeight >= messages.scrollHeight;
     if (!shouldScroll) {
         scrollToBottom();
     }
