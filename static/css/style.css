@@ -189,6 +189,7 @@ input{
    color: #fff;
    border: 2px solid black; /*or make 'none'*/
    margin-right: 20px;
+   margin-bottom: 20px;
    /* margin-left: -10px; */
  }
  .send-btn{
