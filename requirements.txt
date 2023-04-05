@@ -88,7 +88,7 @@ python-json-logger==2.0.6
 python-socketio==5.7.2
 pytiled-parser==2.2.0
 pytz==2022.7.1
-pywin64==306
+pywin==306
 pywinpty==2.0.10
 PyYAML==6.0
 pyzmq==25.0.0
